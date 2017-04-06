@@ -1,16 +1,17 @@
 #include<math.h>
 #include<stdio.h>
 
+
 int even_fib(int maxx) {
-    int curr = 2, prev = 1, even_sum = 0, tmp = 0;
+    int curr = 2, prev = 0, even_sum = 0, tmp = 0;
     while(curr <= maxx) {
         if (curr & 1) {
-            tmp = curr + prev;
+            tmp = (curr<<2) + prev;
             prev = curr;
             curr = tmp;
         } else {
             even_sum += curr;
-            tmp = curr + prev;
+            tmp = (curr<<2) + prev;
             prev = curr;
             curr = tmp;
         }
